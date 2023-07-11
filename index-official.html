@@ -41,14 +41,21 @@
         background-color: #dedddd;
       }
 
-      #title-search {
+      #title-content {
         border: 1px solid black;
-        background-color: #9e9e9e;
+        background-color: #337ab7;
+        color: white;
+        padding-left: 5px;
       }
 
       .btn-action {
         height: 30px;
         width: 100px;
+      }
+
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
       }
     </style>
   </head>
@@ -118,63 +125,103 @@
             <div id="content-container">
               <div class="search-area">
                 <div class="row no-gutter">
-                  <div class="col-lg-12" id="title-search">
-                    <h5><strong>Search</strong></h5>
+                  <div class="col-lg-12" id="title-content">
+                    <h5><strong>Điều kiện tìm kiếm</strong></h5>
                   </div>
                 </div>
                 <br />
                 <br />
                 <div class="row">
-                  <form action="">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-2">
-                      <label for="">Mã định danh chi bộ*</label>
-                    </div>
-                    <div class="col-lg-5">
-                      <input class="form-control" type="text" name="" id="" />
-                    </div>
-                  </form>
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-2">
+                    <label for="">Mã định danh chi bộ</label>
+                  </div>
+                  <div class="col-lg-5">
+                    <input class="form-control" type="text" name="" id="" />
+                  </div>
                 </div>
                 <br />
                 <div class="row">
-                  <div class="col-lg-8"></div>
-                  <div class="col-lg-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-2">
+                    <label for="">Tên chi bộ</label>
+                  </div>
+                  <div class="col-lg-5">
+                    <input class="form-control" type="text" name="" id="" />
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-lg-4"></div>
+                  <div class="col-lg-5">
                     <button class="btn btn-primary btn-action">Tìm kiếm</button>
-                    <button class="btn btn-primary btn-action">Thêm mới</button>
+                    <button class="btn btn-primary btn-action">Đăng ký</button>
+                    <button class="btn btn-primary btn-action">Chi tiết</button>
                   </div>
                 </div>
                 <br />
               </div>
               <br />
-              <div class="table-list">
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <thead>
+              <div class="table-list" style="border: 1px solid black">
+                <div class="row no-gutter">
+                  <div class="col-lg-12" id="title-content">
+                    <h5><strong>Kết quả tìm kiếm</strong></h5>
+                  </div>
+                </div>
+                <br />
+                <div class="table-responsive table-wrapper container-fluid">
+                  <table class="table-bordered">
+                    <thead class="bg-info">
                       <tr>
-                        <th>Mã định danh chi bộ</th>
-                        <th>Mã chi bộ</th>
-                        <th>Số Cif chi bộ</th>
-                        <th>Tên chi bộ</th>
+                        <th rowspan="2">Chọn</th>
+                        <th rowspan="2">STT</th>
+                        <th rowspan="2">Mã định danh Chi bộ</th>
+                        <th rowspan="2">Mã Chi bộ</th>
+                        <th rowspan="2">Tên Chi bộ</th>
+
+                        <th colspan="2">Thời gian đăng ký dịch vụ</th>
+
+                        <th colspan="3">Thời gian quét trích nợ</th>
+
+                        <th rowspan="2">Người tạo</th>
+                        <th rowspan="2">Người phê duyệt</th>
+                        <th rowspan="2">Trạng thái</th>
+                      </tr>
+
+                      <tr>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
                         <th>Ngày bắt đầu quét</th>
-                        <th>Người tạo</th>
-                        <th>Người phê duyệt</th>
-                        <th>Trạng thái</th>
+                        <th>Tần suất</th>
+                        <th>Dải ngày</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Mã định danh chi bộ</td>
-                        <td>Mã chi bộ</td>
-                        <td>Số Cif chi bộ</td>
-                        <td>Tên chi bộ</td>
-                        <td>Ngày bắt đầu quét</td>
-                        <td>Người tạo</td>
-                        <td>Người phê duyệt</td>
-                        <td>Trạng thái</td>
+                        <td><input type="radio" name="" id="" /></td>
+                        <td>STT</td>
+                        <td>Ngày đăng ký hạn mức</td>
+                        <td>Tên người hưởng</td>
+                        <td>Số Passport</td>
+                        <th>12-12-2023</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <td>Quốc gia</td>
+                        <td>Hạn mức quốc gia</td>
+                        <td>
+                          Hạn mức được đăng ký Hạn mức được đăng ký Hạn mức được
+                          đăng ký
+                        </td>
+                        <td>
+                          Số tiền đã chuyển Hạn mức được đăng kýHạn mức được
+                          đăng kýHạn mức được đăng ký
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+                <br />
                 <div class="row">
                   <div class="col-lg-8"></div>
                   <div class="col-lg-4">
@@ -184,6 +231,7 @@
                     <button class="btn btn-primary btn-action">Xóa</button>
                   </div>
                 </div>
+                <br />
               </div>
             </div>
           </div>
