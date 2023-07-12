@@ -72,6 +72,12 @@
 
       .btn-nav {
         border-radius: 0;
+        width: 100%;
+      }
+
+      .btn-selected {
+        background-color: #808386;
+        color: #fff;
       }
     </style>
   </head>
@@ -111,7 +117,6 @@
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-branch"
-                  style="width: 100%"
                   class="btn btn-default btn-nav"
                 >
                   Đăng ký chi bộ
@@ -121,7 +126,6 @@
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-auto-debit"
-                  style="width: 100%"
                   class="btn btn-default btn-nav"
                 >
                   Đăng ký trích nợ tự động
@@ -131,7 +135,6 @@
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-party-fee-allocation"
-                  style="width: 100%"
                   class="btn btn-default btn-nav"
                 >
                   Đăng ký phân bổ đảng phí TC Đảng
@@ -151,27 +154,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-      function loadContentRegisterAutoDebit() {
-        $("#content-container").load("contents/register-auto-debit.html");
-      }
-
-      function loadContentRegisterPartyFeeAllocation() {
-        $("#content-container").load(
-          "contents/register-party-fee-allocation.html"
-        );
-      }
-
-      function loadContentRegisterPartyCell() {
-        $("#content-container").load("contents/register-party-cell.html");
+      function loadContent(buttonId, contentUrl) {
+        $(".btn-nav").removeClass("btn-selected");
+        $("#" + buttonId).addClass("btn-selected");
+        $("#content-container").load(contentUrl);
       }
 
       $(document).ready(function () {
-        loadContentRegisterPartyCell();
-        $("#btn-register-branch").click(loadContentRegisterPartyCell);
-        $("#btn-register-auto-debit").click(loadContentRegisterAutoDebit);
-        $("#btn-register-party-fee-allocation").click(
-          loadContentRegisterPartyFeeAllocation
-        );
+        loadContent("btn-register-branch", "contents/register-party-cell.html");
+        $("#btn-register-branch").click(function () {
+          loadContent(
+            "btn-register-branch",
+            "contents/register-party-cell.html"
+          );
+        });
+        $("#btn-register-auto-debit").click(function () {
+          loadContent(
+            "btn-register-auto-debit",
+            "contents/register-auto-debit.html"
+          );
+        });
+        $("#btn-register-party-fee-allocation").click(function () {
+          loadContent(
+            "btn-register-party-fee-allocation",
+            "contents/register-party-fee-allocation.html"
+          );
+        });
       });
     </script>
   </body>
