@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css"
+      integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .no-gutter {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .no-gutter > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+
+      .row.content {
+        height: 100vh;
+      }
+
+      /* Set gray background color and 100% height */
+      .search-area {
+        border: 1px solid black;
+        background-color: #dedddd;
+      }
+
+      #title-content {
+        border: 1px solid black;
+        background-color: #337ab7;
+        color: white;
+        padding-left: 5px;
+      }
+
+      .btn-action {
+        height: 34px;
+        width: 120px;
+        border-radius: 0;
+      }
+
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      .btn-nav {
+        border-radius: 0;
+        width: 100%;
+      }
+
+      .btn-selected {
+        background-color: #808386;
+        color: #fff;
+      }
+
+      .input-group-btn .btn-file input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        display: block;
+      }
+      .input-group-btn button {
+        width: 100%;
+      }
+
+      .add-party-cell-batch {
+        border: 1px solid rgb(2, 2, 208);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header">
+        <nav class="navbar navbar-inverse">
+          <div>
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#myNavbar"
+              >
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><strong>New TPSS</strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#"
+                    ><span class="glyphicon glyphicon-log-in"></span> Login</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="row no-gutter">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <button id="btn-register-branch" class="btn btn-default btn-nav">
+              Đăng ký chi bộ
+            </button>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <button
+              id="btn-register-auto-debit"
+              class="btn btn-default btn-nav"
+            >
+              Đăng ký trích nợ tự động
+            </button>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <button
+              id="btn-register-party-fee-allocation"
+              class="btn btn-default btn-nav"
+            >
+              Đăng ký phân bổ đảng phí TC Đảng
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content-container">
+        <h2>Cập nhật theo lô</h2>
+        <br />
+        <div class="add-party-cell-batch">
+          <div>
+            <div id="title-content">
+              <h4><strong>Tải file</strong></h4>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2"></div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label for="">Tên file</label>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="row no-gutter">
+                  <div class="col-lg-10 col-md-9 col-sm-9">
+                    <input class="form-control" type="text" name="" id="" />
+                  </div>
+                  <div class="col-lg-2 col-md-3 col-sm-3">
+                    <button class="form-control btn btn-primary btn-action">
+                      Tạo tên file
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2"></div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label for="">Chọn file</label>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="row no-gutter">
+                  <div class="col-lg-8 col-md-6 col-sm-6">
+                    <input type="text" class="form-control" readonly />
+                  </div>
+                  <div class="col-lg-2 col-md-3 col-sm-3">
+                    <div class="input-group-btn">
+                      <button class="btn btn-primary btn-file btn-action">
+                        <input type="file" /> Chọn file
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-3 col-sm-3">
+                    <a
+                      class="form-control btn btn-primary btn-action"
+                      id="templateButton"
+                    >
+                      Lấy file mẫu
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4"></div>
+              <div class="col-lg-6 col-md-6 col-sm-8">
+                <button class="btn btn-primary btn-action" disabled>
+                  Tải file
+                </button>
+                <button class="btn btn-primary btn-action">Nhập lại</button>
+                <button class="btn btn-primary btn-action">
+                  Gửi phê duyệt
+                </button>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2"></div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label for="">Kết quả tải file</label>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <button class="form-control btn btn-primary btn-action">
+                  Lưu file <i class="fa fa-file-o"></i>
+                </button>
+              </div>
+              <div class="col-lg-5 col-md-4 col-sm-4">
+                <p>
+                  <i>
+                    Có 10 dữ liệu được tải lên: 8 dữ liệu hợp lệ, 2 dữ liệu
+                    không hợp lệ</i
+                  >
+                </p>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <footer class="container-fluid text-center">
+      <p>Footer Text</p>
+    </footer> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      function loadContent(buttonId, contentUrl) {
+        $(".btn-nav").removeClass("btn-selected");
+        $("#" + buttonId).addClass("btn-selected");
+        $("#content-container").load(contentUrl);
+      }
+
+      $(document).ready(function () {
+        // loadContent("btn-register-branch", "contents/register-party-cell.html");
+        $("#btn-register-branch").click(function () {
+          loadContent(
+            "btn-register-branch",
+            "contents/register-party-cell.html"
+          );
+        });
+        $("#btn-register-auto-debit").click(function () {
+          loadContent(
+            "btn-register-auto-debit",
+            "contents/register-auto-debit.html"
+          );
+        });
+        $("#btn-register-party-fee-allocation").click(function () {
+          loadContent(
+            "btn-register-party-fee-allocation",
+            "contents/register-party-fee-allocation.html"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
