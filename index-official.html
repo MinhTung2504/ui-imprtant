@@ -9,6 +9,14 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css"
+      integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
       .no-gutter {
         margin-right: 0;
@@ -30,12 +38,6 @@
       }
 
       /* Set gray background color and 100% height */
-      .sidenav {
-        padding-top: 20px;
-        background-color: #f1f1f1;
-        height: 100%;
-      }
-
       .search-area {
         border: 1px solid black;
         background-color: #dedddd;
@@ -57,6 +59,20 @@
         width: 100%;
         overflow-x: auto;
       }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      .btn-nav {
+        border-radius: 0;
+      }
     </style>
   </head>
   <body>
@@ -74,16 +90,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">TPSS New</a>
+            <a class="navbar-brand" href="#"><strong>New TPSS</strong></a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <!-- <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#"
-              ><span class="glyphicon glyphicon-log-in"></span> Login</a
-            >
-          </li>
-        </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-log-in"></span> Login</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -92,148 +108,37 @@
         <div class="row no-gutter content">
           <div class="text-left">
             <div class="row no-gutter">
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-branch"
                   style="width: 100%"
-                  class="btn btn-default"
+                  class="btn btn-default btn-nav"
                 >
                   Đăng ký chi bộ
                 </button>
               </div>
 
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-auto-debit"
                   style="width: 100%"
-                  class="btn btn-default"
+                  class="btn btn-default btn-nav"
                 >
                   Đăng ký trích nợ tự động
                 </button>
               </div>
 
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-4 col-sm-4">
                 <button
                   id="btn-register-party-fee-allocation"
                   style="width: 100%"
-                  class="btn btn-default"
+                  class="btn btn-default btn-nav"
                 >
                   Đăng ký phân bổ đảng phí TC Đảng
                 </button>
               </div>
             </div>
-            <div id="content-container">
-              <div class="search-area">
-                <div class="row no-gutter">
-                  <div class="col-lg-12" id="title-content">
-                    <h5><strong>Điều kiện tìm kiếm</strong></h5>
-                  </div>
-                </div>
-                <br />
-                <br />
-                <div class="row">
-                  <div class="col-lg-2"></div>
-                  <div class="col-lg-2">
-                    <label for="">Mã định danh chi bộ</label>
-                  </div>
-                  <div class="col-lg-5">
-                    <input class="form-control" type="text" name="" id="" />
-                  </div>
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-lg-2"></div>
-                  <div class="col-lg-2">
-                    <label for="">Tên chi bộ</label>
-                  </div>
-                  <div class="col-lg-5">
-                    <input class="form-control" type="text" name="" id="" />
-                  </div>
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-lg-4"></div>
-                  <div class="col-lg-5">
-                    <button class="btn btn-primary btn-action">Tìm kiếm</button>
-                    <button class="btn btn-primary btn-action">Đăng ký</button>
-                    <button class="btn btn-primary btn-action">Chi tiết</button>
-                  </div>
-                </div>
-                <br />
-              </div>
-              <br />
-              <div class="table-list" style="border: 1px solid black">
-                <div class="row no-gutter">
-                  <div class="col-lg-12" id="title-content">
-                    <h5><strong>Kết quả tìm kiếm</strong></h5>
-                  </div>
-                </div>
-                <br />
-                <div class="table-responsive table-wrapper container-fluid">
-                  <table class="table-bordered">
-                    <thead class="bg-info">
-                      <tr>
-                        <th rowspan="2">Chọn</th>
-                        <th rowspan="2">STT</th>
-                        <th rowspan="2">Mã định danh Chi bộ</th>
-                        <th rowspan="2">Mã Chi bộ</th>
-                        <th rowspan="2">Tên Chi bộ</th>
-
-                        <th colspan="2">Thời gian đăng ký dịch vụ</th>
-
-                        <th colspan="3">Thời gian quét trích nợ</th>
-
-                        <th rowspan="2">Người tạo</th>
-                        <th rowspan="2">Người phê duyệt</th>
-                        <th rowspan="2">Trạng thái</th>
-                      </tr>
-
-                      <tr>
-                        <th>Ngày bắt đầu</th>
-                        <th>Ngày kết thúc</th>
-                        <th>Ngày bắt đầu quét</th>
-                        <th>Tần suất</th>
-                        <th>Dải ngày</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><input type="radio" name="" id="" /></td>
-                        <td>STT</td>
-                        <td>Ngày đăng ký hạn mức</td>
-                        <td>Tên người hưởng</td>
-                        <td>Số Passport</td>
-                        <th>12-12-2023</th>
-                        <th>Ngày kết thúc</th>
-                        <th>Ngày bắt đầu</th>
-                        <th>Ngày kết thúc</th>
-                        <td>Quốc gia</td>
-                        <td>Hạn mức quốc gia</td>
-                        <td>
-                          Hạn mức được đăng ký Hạn mức được đăng ký Hạn mức được
-                          đăng ký
-                        </td>
-                        <td>
-                          Số tiền đã chuyển Hạn mức được đăng kýHạn mức được
-                          đăng kýHạn mức được đăng ký
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-lg-8"></div>
-                  <div class="col-lg-4">
-                    <button class="btn btn-primary btn-action" id="btn-edit">
-                      Sửa
-                    </button>
-                    <button class="btn btn-primary btn-action">Xóa</button>
-                  </div>
-                </div>
-                <br />
-              </div>
-            </div>
+            <div id="content-container"></div>
           </div>
         </div>
       </div>
@@ -246,28 +151,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-      function loadContentRegisterBranch() {
-        $("#content-container").load("contents/register-branch-party.html");
-      }
       function loadContentRegisterAutoDebit() {
         $("#content-container").load("contents/register-auto-debit.html");
       }
+
       function loadContentRegisterPartyFeeAllocation() {
         $("#content-container").load(
           "contents/register-party-fee-allocation.html"
         );
       }
-      function loadContentEditRegisterBranch() {
-        $("#content-container").load("contents/edit-info-official.html");
+
+      function loadContentRegisterPartyCell() {
+        $("#content-container").load("contents/register-party-cell.html");
       }
 
       $(document).ready(function () {
-        $("#btn-register-branch").click(loadContentRegisterBranch);
+        loadContentRegisterPartyCell();
+        $("#btn-register-branch").click(loadContentRegisterPartyCell);
         $("#btn-register-auto-debit").click(loadContentRegisterAutoDebit);
         $("#btn-register-party-fee-allocation").click(
           loadContentRegisterPartyFeeAllocation
         );
-        $("#btn-edit").click(loadContentEditRegisterBranch);
       });
     </script>
   </body>

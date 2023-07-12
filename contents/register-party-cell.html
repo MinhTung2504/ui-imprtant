@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content-container">
+      <div class="search-area">
+        <div class="row no-gutter">
+          <div class="col-lg-12 col-md-12 col-sm-12" id="title-content">
+            <h5><strong>Điều kiện tìm kiếm</strong></h5>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-1"></div>
+          <div class="col-lg-2 col-md-2 col-sm-3">
+            <label for="">Mã định danh chi bộ</label>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-6">
+            <input class="form-control" type="text" name="" id="" />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-1"></div>
+          <div class="col-lg-2 col-md-2 col-sm-3">
+            <label for="">Tên chi bộ</label>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-6">
+            <input class="form-control" type="text" name="" id="" />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4"></div>
+          <div class="col-lg-5 col-md-5 col-sm-5">
+            <button class="btn btn-primary btn-action">Tìm kiếm</button>
+            <button
+              class="btn btn-primary btn-action"
+              id="btn-register-party-cell"
+            >
+              Đăng ký
+            </button>
+            <button class="btn btn-primary btn-action" id="btn-detail">
+              Chi tiết
+            </button>
+          </div>
+        </div>
+        <br />
+      </div>
+      <br />
+      <div class="table-list" style="border: 1px solid black">
+        <div class="row no-gutter">
+          <div class="col-lg-12 col-md-12 col-sm-12" id="title-content">
+            <h5><strong>Kết quả tìm kiếm</strong></h5>
+          </div>
+        </div>
+        <br />
+        <div class="table-responsive table-wrapper container-fluid">
+          <table class="table-bordered text-center">
+            <thead class="bg-info">
+              <tr>
+                <th rowspan="2">Chọn</th>
+                <th rowspan="2">STT</th>
+                <th rowspan="2">Mã định danh Chi bộ</th>
+                <th rowspan="2">Mã Chi bộ</th>
+                <th rowspan="2">Tên Chi bộ</th>
+
+                <th colspan="2">Thời gian đăng ký dịch vụ</th>
+
+                <th colspan="3">Thời gian quét trích nợ</th>
+
+                <th rowspan="2">Người tạo</th>
+                <th rowspan="2">Người phê duyệt</th>
+                <th rowspan="2">Trạng thái</th>
+              </tr>
+
+              <tr>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Ngày bắt đầu quét</th>
+                <th>Tần suất</th>
+                <th>Dải ngày</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="radio" name="" id="" /></td>
+                <td>1</td>
+                <td>01CB</td>
+                <td>123</td>
+                <td>Chi bộ 1</td>
+                <td>30/05/2023</td>
+                <td>29/10/2023</td>
+                <td>31/05/2023</td>
+                <td>THÁNG</td>
+                <td>10</td>
+                <td>Maker 1</td>
+                <td>Checker 1</td>
+                <td>Cho phe duyet</td>
+              </tr>
+
+              <tr>
+                <td><input type="radio" name="" id="" /></td>
+                <td>1</td>
+                <td>01CB</td>
+                <td>123</td>
+                <td>Chi bộ 1</td>
+                <td>30/05/2023</td>
+                <td>29/10/2023</td>
+                <td>31/05/2023</td>
+                <td>THÁNG</td>
+                <td>10</td>
+                <td>Maker 1</td>
+                <td>Checker 1</td>
+                <td>Cho phe duyet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-lg-9 col-md-8 col-sm-8"></div>
+          <div class="col-lg-3 col-md-4 col-sm-4">
+            <ul class="pagination">
+              <li><a href="#">&Lt;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">&Gt;</a></li>
+            </ul>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <script>
+      function loadRegisterPartyCell() {
+        console.log("Click");
+        $("#content-container").load("contents/batch-update.html");
+      }
+
+      function loadDetailInformationPage() {
+        $("#content-container").load("contents/edit-info-official.html");
+      }
+
+      $(document).ready(function () {
+        $("#btn-register-party-cell").click(loadRegisterPartyCell);
+        $("#btn-detail").click(loadDetailInformationPage);
+      });
+    </script>
+  </body>
+</html>
