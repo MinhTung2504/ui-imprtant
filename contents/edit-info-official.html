@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -16,7 +16,7 @@
       integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
     <!-- <link rel="stylesheet" href="../css/edit-info-official.css" /> -->
 
     <title>Chỉnh sửa đăng ký chi bộ</title>
@@ -42,29 +42,35 @@
         <div class="col-lg-6 col-md-9">
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Mã định danh chi bộ:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="text" placeholder="01CB" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="">Số cif chi bộ:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="text" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="">Tên chi bộ:</label>
+              <label for="maDinhDanh">Mã định danh chi bộ:</label>
             </div>
             <div class="col-lg-5 col-md-5">
               <input
                 class="form-control"
                 type="text"
+                id="maDinhDanh"
+                placeholder="01CB"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-3 col-md-3">
+              <label for="soCif">Số cif chi bộ:</label>
+            </div>
+            <div class="col-lg-5 col-md-5">
+              <input class="form-control" type="text" id="soCif" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-3">
+              <label for="tenChiBo">Tên chi bộ:</label>
+            </div>
+            <div class="col-lg-5 col-md-5">
+              <input
+                class="form-control"
+                type="text"
+                id="tenChiBo"
                 placeholder="Chi bộ 02"
                 disabled
               />
@@ -72,15 +78,15 @@
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Mã chi bộ:</label>
+              <label for="maChiBo">Mã chi bộ:</label>
             </div>
             <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="text" />
+              <input class="form-control" type="text" id="maChiBo" />
             </div>
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Tần suất:</label>
+              <label for="tanSuat">Tần suất:</label>
             </div>
             <div class="col-lg-5 col-md-5">
               <div class="row">
@@ -88,39 +94,45 @@
                   <input
                     class="form-control"
                     type="text"
+                    id="tanSuat"
                     value="Tháng"
                     placeholder="Tháng"
                     disabled
                   />
                 </div>
                 <div class="col-lg-3 col-md-3">
-                  <input class="form-control" type="number" placeholder="5" />
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="soLuong"
+                    placeholder="5"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Ngày bắt đầu quét:</label>
+              <label for="ngayQuet">Ngày bắt đầu quét:</label>
             </div>
             <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" />
+              <input class="form-control" type="date" id="ngayQuet" />
             </div>
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Ngày bắt đầu dịch vụ:</label>
+              <label for="ngayBatDau">Ngày bắt đầu dịch vụ:</label>
             </div>
             <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" />
+              <input class="form-control" type="date" id="ngayBatDau" />
             </div>
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-3">
-              <label for="">Ngày kết thúc dịch vụ:</label>
+              <label for="ngayKetThuc">Ngày kết thúc dịch vụ:</label>
             </div>
             <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" />
+              <input class="form-control" type="date" id="ngayKetThuc" />
             </div>
           </div>
         </div>
@@ -133,7 +145,9 @@
           <div class="row">
             <div class="col-lg-3 col-md-3"></div>
             <div class="col-lg-5 col-md-5">
-              <button class="btn btn-primary">Cập nhật</button>
+              <button class="btn btn-primary" onclick="validateForm()">
+                Cập nhật
+              </button>
               <button class="btn btn-primary">Xóa</button>
               <button class="btn btn-default">
                 <i class="fa fa-sign-out"></i>Quay lại
@@ -144,5 +158,84 @@
         <div class="col-lg-3 col-md-3"></div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      function displayErrorMessage(inputElement, message) {
+        const errorElement = $("<div>").addClass("error-message").text(message);
+        inputElement.after(errorElement);
+        inputElement.addClass("invalid");
+      }
+
+      function clearErrorMessages() {
+        $(".error-message").remove();
+        $(".invalid").removeClass("invalid");
+      }
+
+      function parseDate(dateString) {
+        const [year, month, day] = dateString.split("-");
+        return new Date(year, month - 1, day);
+      }
+
+      $(document).ready(function () {
+        $("input").on("input blur", function () {
+          const inputElement = $(this);
+          const errorMessage = inputElement.siblings(".error-message");
+
+          if (inputElement.val() === "" && errorMessage.length === 0) {
+            displayErrorMessage(inputElement, "Vui lòng nhập giá trị.");
+          } else {
+            errorMessage.remove();
+            inputElement.removeClass("invalid");
+          }
+
+          const currentDate = new Date();
+
+          const ngayQuetDate = parseDate($("#ngayQuet").val());
+          const ngayBatDauDate = parseDate($("#ngayBatDau").val());
+          const ngayKetThucDate = parseDate($("#ngayKetThuc").val());
+
+          if (
+            inputElement.attr("id") === "ngayQuet" &&
+            ngayQuetDate < currentDate
+          ) {
+            displayErrorMessage(
+              inputElement,
+              "Ngày bắt đầu quét phải là ngày hiện tại hoặc sau ngày hiện tại."
+            );
+          }
+
+          if (
+            inputElement.attr("id") === "ngayBatDau" &&
+            ngayBatDauDate < currentDate
+          ) {
+            displayErrorMessage(
+              inputElement,
+              "Ngày bắt đầu dịch vụ phải là ngày hiện tại hoặc sau ngày hiện tại."
+            );
+          }
+
+          if (
+            inputElement.attr("id") === "ngayKetThuc" &&
+            ngayKetThucDate < currentDate
+          ) {
+            displayErrorMessage(
+              inputElement,
+              "Ngày kết thúc dịch vụ phải là ngày hiện tại hoặc sau ngày hiện tại."
+            );
+          }
+
+          if (inputElement.attr("id") === "soLuong") {
+            const soLuongValue = parseInt(inputElement.val());
+            if (soLuongValue <= 0) {
+              displayErrorMessage(
+                inputElement,
+                "Số lượng phải là số dương lớn hơn 0."
+              );
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
