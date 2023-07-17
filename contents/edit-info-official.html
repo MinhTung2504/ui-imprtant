@@ -37,6 +37,7 @@
 
   <body>
     <div class="edit-content">
+      <h2>Chi tiết</h2>
       <div class="row">
         <div class="col-lg-3 col-md-2"></div>
         <div class="col-lg-6 col-md-9">
@@ -175,6 +176,67 @@
       function parseDate(dateString) {
         const [year, month, day] = dateString.split("-");
         return new Date(year, month - 1, day);
+      }
+
+      function validateForm() {
+        clearErrorMessages();
+
+        const maDinhDanh = $("#maDinhDanh");
+        const soCif = $("#soCif");
+        const maChiBo = $("#maChiBo");
+        const soLuong = $("#soLuong");
+        const ngayQuet = $("#ngayQuet");
+        const ngayBatDau = $("#ngayBatDau");
+        const ngayKetThuc = $("#ngayKetThuc");
+
+        const currentDate = new Date();
+
+        if (maDinhDanh.val() === "") {
+          displayErrorMessage(maDinhDanh, "Vui lòng nhập mã định danh chi bộ.");
+          return false;
+        }
+
+        // ... Add similar validations for other fields ...
+
+        if (soLuong.val() === "") {
+          displayErrorMessage(soLuong, "Vui lòng nhập số lượng.");
+          return false;
+        }
+
+        const ngayQuetDate = parseDate(ngayQuet.val());
+        const ngayBatDauDate = parseDate(ngayBatDau.val());
+        const ngayKetThucDate = parseDate(ngayKetThuc.val());
+
+        if (ngayQuetDate < currentDate) {
+          displayErrorMessage(
+            ngayQuet,
+            "Ngày bắt đầu quét phải là ngày hiện tại hoặc sau ngày hiện tại."
+          );
+          return false;
+        }
+
+        if (ngayBatDauDate < currentDate) {
+          displayErrorMessage(
+            ngayBatDau,
+            "Ngày bắt đầu dịch vụ phải là ngày hiện tại hoặc sau ngày hiện tại."
+          );
+          return false;
+        }
+
+        if (ngayKetThucDate < currentDate) {
+          displayErrorMessage(
+            ngayKetThuc,
+            "Ngày kết thúc dịch vụ phải là ngày hiện tại hoặc sau ngày hiện tại."
+          );
+          return false;
+        }
+
+        if (parseInt(soLuong.val()) <= 0) {
+          displayErrorMessage(soLuong, "Số lượng phải là số dương lớn hơn 0.");
+          return false;
+        }
+
+        return true;
       }
 
       $(document).ready(function () {
