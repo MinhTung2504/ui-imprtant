@@ -65,6 +65,7 @@
           </div>
           <br />
           <br />
+
           <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-2">
@@ -84,42 +85,56 @@
             </div>
           </div>
           <br />
-          <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-2">
-              <label for="">Chọn file</label>
-            </div>
-            <div class="col-lg-6">
-              <div class="row no-gutter">
-                <div class="col-lg-8">
-                  <input type="text" class="form-control" readonly />
-                </div>
-                <div class="col-lg-2">
-                  <div class="input-group-btn">
-                    <button class="btn btn-primary btn-file">
-                      <input type="file" /> Chọn file
-                    </button>
+          <form>
+            <div class="row">
+              <div class="col-lg-2"></div>
+              <div class="col-lg-2">
+                <label for="">Chọn file</label>
+              </div>
+              <div class="col-lg-6">
+                <div class="row no-gutter">
+                  <div class="col-lg-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fileNameSelected"
+                      readonly
+                    />
                   </div>
-                </div>
-                <div class="col-lg-2">
-                  <a class="form-control btn btn-primary" id="templateButton">
-                    Lấy file mẫu
-                  </a>
+                  <div class="col-lg-2">
+                    <div class="input-group-btn">
+                      <button class="btn btn-primary btn-file">
+                        <input
+                          type="file"
+                          id="fileInput"
+                          onchange="handleAnotherAction()"
+                        />
+                        Chọn file
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <a class="form-control btn btn-primary" id="templateButton">
+                      Lấy file mẫu
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-3">
-              <button class="btn btn-primary btn-action" disabled>
-                Tải file
-              </button>
-              <button class="btn btn-primary btn-action">Nhập lại</button>
-              <button class="btn btn-primary btn-action">Gửi phê duyệt</button>
+            <br />
+            <div class="row">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-3">
+                <button class="btn btn-primary btn-action" disabled>
+                  Tải file
+                </button>
+                <button class="btn btn-primary btn-action">Nhập lại</button>
+                <button class="btn btn-primary btn-action">
+                  Gửi phê duyệt
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
           <br />
           <div class="row">
             <div class="col-lg-2"></div>
@@ -153,6 +168,19 @@
           $(".form-control[readonly]").val(fileName);
         });
       });
+
+      // $(document).ready(function () {
+      //   // When the file input changes (file is selected), update the text input with the file name
+      //   $("#fileInput").on("change", function () {
+      //     var fileName = $(this).val().split("\\").pop(); // Extract the file name from the input value
+      //     $("#fileNameSelected").val(fileName); // Set the value of the text input to the file name
+      //   });
+      // });
+
+      function handleAnotherAction() {
+        var fileName = $("#fileInput").val().split("\\").pop(); // Extract the file name from the input value
+        $("#fileNameSelected").val(fileName); // Set the value of the text input to the file name
+      }
     </script>
   </body>
 </html>

@@ -36,128 +36,128 @@
   </head>
 
   <body>
-    <div class="edit-content">
+    <div style="display: inline" class="edit-content">
       <h2>Chi tiết</h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-2"></div>
-        <div class="col-lg-6 col-md-9">
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="maDinhDanh">Mã định danh chi bộ:</label>
+      <form action="/test" method="POST" onsubmit="return validateForm()">
+        <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-9">
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="maDinhDanh">Mã định danh chi bộ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="maDinhDanh"
+                  placeholder="01CB"
+                />
+              </div>
             </div>
-            <div class="col-lg-5 col-md-5">
-              <input
-                class="form-control"
-                type="text"
-                id="maDinhDanh"
-                placeholder="01CB"
-              />
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="soCif">Số cif chi bộ:</label>
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="soCif">Số cif chi bộ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input class="form-control" type="text" id="soCif" />
+              </div>
             </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="text" id="soCif" />
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="tenChiBo">Tên chi bộ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="tenChiBo"
+                  placeholder="Chi bộ 02"
+                  disabled
+                />
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="tenChiBo">Tên chi bộ:</label>
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="maChiBo">Mã chi bộ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input class="form-control" type="text" id="maChiBo" />
+              </div>
             </div>
-            <div class="col-lg-5 col-md-5">
-              <input
-                class="form-control"
-                type="text"
-                id="tenChiBo"
-                placeholder="Chi bộ 02"
-                disabled
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="maChiBo">Mã chi bộ:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="text" id="maChiBo" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="tanSuat">Tần suất:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <div class="row">
-                <div class="col-lg-9 col-md-9">
-                  <input
-                    class="form-control"
-                    type="text"
-                    id="tanSuat"
-                    value="Tháng"
-                    placeholder="Tháng"
-                    disabled
-                  />
-                </div>
-                <div class="col-lg-3 col-md-3">
-                  <input
-                    class="form-control"
-                    type="number"
-                    id="soLuong"
-                    placeholder="5"
-                  />
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="tanSuat">Tần suất:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <div class="row">
+                  <div class="col-lg-9 col-md-9">
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="tanSuat"
+                      value="Tháng"
+                      placeholder="Tháng"
+                      disabled
+                    />
+                  </div>
+                  <div class="col-lg-3 col-md-3">
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="soLuong"
+                      placeholder="5"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="ngayQuet">Ngày bắt đầu quét:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input class="form-control" type="date" id="ngayQuet" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="ngayBatDau">Ngày bắt đầu dịch vụ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input class="form-control" type="date" id="ngayBatDau" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <label for="ngayKetThuc">Ngày kết thúc dịch vụ:</label>
+              </div>
+              <div class="col-lg-5 col-md-5">
+                <input class="form-control" type="date" id="ngayKetThuc" />
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="ngayQuet">Ngày bắt đầu quét:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" id="ngayQuet" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="ngayBatDau">Ngày bắt đầu dịch vụ:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" id="ngayBatDau" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-3">
-              <label for="ngayKetThuc">Ngày kết thúc dịch vụ:</label>
-            </div>
-            <div class="col-lg-5 col-md-5">
-              <input class="form-control" type="date" id="ngayKetThuc" />
-            </div>
-          </div>
+          <div class="col-lg-3 col-md-1"></div>
         </div>
-        <div class="col-lg-3 col-md-1"></div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-lg-3 col-md-3"></div>
-        <div class="col-lg-6 col-md-6">
-          <div class="row">
-            <div class="col-lg-3 col-md-3"></div>
-            <div class="col-lg-5 col-md-5">
-              <button class="btn btn-primary" onclick="validateForm()">
-                Cập nhật
-              </button>
-              <button class="btn btn-primary">Xóa</button>
-              <button class="btn btn-default">
-                <i class="fa fa-sign-out"></i>Quay lại
-              </button>
+        <br />
+        <div class="row">
+          <div class="col-lg-3 col-md-3"></div>
+          <div class="col-lg-6 col-md-6">
+            <div class="row">
+              <div class="col-lg-3 col-md-3"></div>
+              <div class="col-lg-5 col-md-5">
+                <button class="btn btn-primary" type="submit">Cập nhật</button>
+                <button class="btn btn-primary">Xóa</button>
+                <button class="btn btn-default">
+                  <i class="fa fa-sign-out"></i>Quay lại
+                </button>
+              </div>
             </div>
           </div>
+          <div class="col-lg-3 col-md-3"></div>
         </div>
-        <div class="col-lg-3 col-md-3"></div>
-      </div>
+      </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -189,7 +189,10 @@
         const ngayBatDau = $("#ngayBatDau");
         const ngayKetThuc = $("#ngayKetThuc");
 
+        console.log(parseDate(ngayQuet.val()) < new Date());
+
         const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0);
 
         if (maDinhDanh.val() === "") {
           displayErrorMessage(maDinhDanh, "Vui lòng nhập mã định danh chi bộ.");
@@ -204,8 +207,13 @@
         }
 
         const ngayQuetDate = parseDate(ngayQuet.val());
+        ngayQuetDate.setHours(0, 0, 0, 0); // Set time to midnight (00:00:00.000) to consider only the date
+
         const ngayBatDauDate = parseDate(ngayBatDau.val());
+        ngayBatDauDate.setHours(0, 0, 0, 0); // Set time to midnight (00:00:00.000) to consider only the date
+
         const ngayKetThucDate = parseDate(ngayKetThuc.val());
+        ngayKetThucDate.setHours(0, 0, 0, 0); // Set time to midnight (00:00:00.000) to consider only the date
 
         if (ngayQuetDate < currentDate) {
           displayErrorMessage(
@@ -252,10 +260,13 @@
           }
 
           const currentDate = new Date();
-
+          currentDate.setHours(0, 0, 0, 0);
           const ngayQuetDate = parseDate($("#ngayQuet").val());
+          ngayQuetDate.setHours(0, 0, 0, 0);
           const ngayBatDauDate = parseDate($("#ngayBatDau").val());
+          ngayBatDauDate.setHours(0, 0, 0, 0);
           const ngayKetThucDate = parseDate($("#ngayKetThuc").val());
+          ngayKetThucDate.setHours(0, 0, 0, 0);
 
           if (
             inputElement.attr("id") === "ngayQuet" &&
