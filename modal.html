@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Confirmation Modal</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <!-- Your content -->
+
+    <!-- Update Button -->
+    <button class="btn btn-primary" onclick="showConfirmationModal('update')">
+      Update
+    </button>
+
+    <!-- Delete Button -->
+    <button class="btn btn-danger" onclick="showConfirmationModal('delete')">
+      Delete
+    </button>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Confirmation</h4>
+          </div>
+          <div class="modal-body">
+            <p id="confirmationMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="confirmBtn">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your other content -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Include the JavaScript code -->
+    <script>
+      // confirmation-modal.js
+
+      var currentAction; // Store the current action (update/delete)
+
+      // Function to show the confirmation modal
+      function showConfirmationModal(action) {
+        currentAction = action;
+
+        // Set the confirmation message based on the action
+        var confirmationMessage =
+          "Are you sure you want to " +
+          (action === "update" ? "update" : "delete") +
+          "?";
+        $("#confirmationMessage").text(confirmationMessage);
+
+        // Display the modal
+        $("#confirmationModal").modal("show");
+
+        // Set the action for the Confirm button
+        $("#confirmBtn").on("click", function () {
+          // Call the appropriate function based on the current action
+          if (currentAction === "update") {
+            updateFunction();
+          } else if (currentAction === "delete") {
+            deleteFunction();
+          }
+
+          // Close the modal
+          $("#confirmationModal").modal("hide");
+        });
+      }
+
+      // Update function
+      function updateFunction() {
+        console.log("Update function triggered");
+        // Add your update logic here
+      }
+
+      // Delete function
+      function deleteFunction() {
+        console.log("Delete function triggered");
+        // Add your delete logic here
+      }
+    </script>
+  </body>
+</html>
